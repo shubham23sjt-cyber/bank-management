@@ -21,7 +21,7 @@ export class AuthService {
         const user=await this.prisma.user.create({
             data:{name,email,password:hash},
         })
-        return {userid:user.id}
+        return {userId:user.id}
     }
 async login(data:any){
     const user= await this.prisma.user.findUnique({
@@ -35,7 +35,7 @@ async login(data:any){
     );
     if(!match) throw new BadRequestException("invalid credential");
 
-    const token=this.jwt.sign({userTd:user.id});
+    const token=this.jwt.sign({userId:user.id});
 
     return {access_token:token};
 }
