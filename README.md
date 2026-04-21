@@ -93,7 +93,11 @@ Create `.env` file:
 
 ```id="c3"
 DATABASE_URL="postgresql://user:password@localhost:5432/bank"
-JWT_SECRET="your_secret_key"
+MAIL_HOST="sandbox.smtp.mailtrap.io"
+MAIL_PORT=2525
+MAIL_USER="your_mailtrap_user"
+MAIL_PASS="your_mailtrap_password"
+
 ```
 
 ---
